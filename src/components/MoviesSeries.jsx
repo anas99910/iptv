@@ -11,12 +11,12 @@ const MoviesSeries = () => {
   };
 
   const posters = [
-    { title: 'Dune: Part Two', src: '/movie_dune.png' },
-    { title: 'Stranger Things', src: '/movie_stranger_things.png' },
-    { title: 'The Batman', src: '/movie_the_batman.png' },
-    { title: 'Oppenheimer', src: '/movie_oppenheimer.png' },
-    { title: 'Breaking Bad', src: '/movie_breaking_bad.png' },
-    { title: 'Interstellar', src: '/movie_interstellar.png' },
+    { title: 'Dune: Part Two', src: '/movie_dune.png', link: 'https://streamimdb.ru/embed/movie/tt1160419' },
+    { title: 'Stranger Things', src: '/movie_stranger_things.png', link: 'https://streamimdb.ru/embed/tv/tt4574334' },
+    { title: 'The Batman', src: '/movie_the_batman.png', link: 'https://streamimdb.ru/embed/movie/tt1877830' },
+    { title: 'Oppenheimer', src: '/movie_oppenheimer.png', link: 'https://streamimdb.ru/embed/movie/tt15398776' },
+    { title: 'Breaking Bad', src: '/movie_breaking_bad.png', link: 'https://streamimdb.ru/embed/tv/tt0903747' },
+    { title: 'Interstellar', src: '/movie_interstellar.png', link: 'https://streamimdb.ru/embed/movie/tt0816692' },
   ];
 
   return (
@@ -36,9 +36,12 @@ const MoviesSeries = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {posters.map((movie, index) => (
-            <div 
+            <a 
               key={index} 
-              className="relative aspect-[2/3] rounded-xl overflow-hidden group cursor-pointer shadow-lg border border-white/5 bg-slate-900/50"
+              href={movie.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative aspect-[2/3] rounded-xl overflow-hidden group cursor-pointer shadow-lg border border-white/5 bg-slate-900/50 block"
             >
               {imageErrors[index] ? (
                 <div className="w-full h-full bg-gradient-to-br from-indigo-950 via-slate-900 to-[#02040a] flex flex-col justify-between p-5 text-center relative">
@@ -72,7 +75,7 @@ const MoviesSeries = () => {
                   </div>
                 </>
               )}
-            </div>
+            </a>
           ))}
         </div>
       </div>
