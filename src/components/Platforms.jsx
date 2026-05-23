@@ -10,7 +10,7 @@ const Platforms = () => {
     { name: 'Fire TV Stick', icon: <Tv className="w-5 h-5 text-orange-500" /> },
     { name: 'Samsung SMART TV', icon: <Tv className="w-5 h-5 text-blue-600" /> },
     { name: 'Android TV', icon: <Tv className="w-5 h-5 text-emerald-500" /> },
-    { name: 'iOS', icon: <Smartphone className="w-5 h-5 text-slate-500" /> },
+    { name: 'iOS', icon: <Smartphone className="w-5 h-5 text-slate-400" /> },
     { name: 'MAG Box', icon: <Tv className="w-5 h-5 text-pink-500" /> },
     { name: 'NVIDIA SHIELD', icon: <Tv className="w-5 h-5 text-green-500" /> },
     { name: 'Android', icon: <Smartphone className="w-5 h-5 text-emerald-400" /> },
@@ -36,31 +36,31 @@ const Platforms = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: 12 Brand Badges Grid */}
+          {/* Left Column: 12 Brand Badges Grid (Fully Glassmorphism) */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4 order-2 lg:order-1">
             {deviceBadges.map((badge, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="bg-white hover:bg-slate-50 transition-all duration-300 rounded-xl p-4 flex items-center justify-center gap-3 border border-white/10 shadow-lg cursor-default select-none"
+                className="glass-card p-4 flex items-center justify-center gap-3 cursor-default select-none transition-all duration-300"
               >
                 {badge.icon}
-                <span className="text-gray-900 font-extrabold text-sm md:text-base tracking-tight">{badge.name}</span>
+                <span className="text-gray-200 font-extrabold text-sm md:text-base tracking-tight">{badge.name}</span>
               </motion.div>
             ))}
           </div>
 
-          {/* Right Column: Copywriting & 4 White Pills */}
+          {/* Right Column: Copywriting & 4 Glossy Dark Pills */}
           <div className="lg:col-span-5 flex flex-col gap-8 text-center lg:text-left order-1 lg:order-2">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
                 {t('IPTV Maroc')}
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glow-text">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary glow-text uppercase">
                   {t('COMPATIBLE WITH ALL DEVICES')}
                 </span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed">
+              <p className="text-gray-400 text-lg leading-relaxed font-light">
                 {t('Enjoy premium IPTV at affordable prices.')}
               </p>
             </div>
@@ -69,8 +69,8 @@ const Platforms = () => {
               {infoPills.map((pill, idx) => (
                 <motion.div 
                   key={idx}
-                  whileHover={{ scale: 1.03 }}
-                  className="bg-white text-gray-900 shadow-[0_5px_20px_rgba(255,255,255,0.06)] font-black text-base md:text-lg flex items-center justify-center py-4 px-6 rounded-full cursor-default select-none border border-white/10"
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  className="bg-white/5 border border-white/10 hover:border-secondary/50 text-gray-200 hover:text-white shadow-lg font-black text-base md:text-lg flex items-center justify-center py-4 px-6 rounded-full cursor-default select-none transition-all duration-300 backdrop-blur-md"
                 >
                   {t(pill)}
                 </motion.div>
