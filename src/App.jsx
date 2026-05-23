@@ -6,7 +6,9 @@ import Features from './components/Features';
 import Platforms from './components/Platforms';
 import MoviesSeries from './components/MoviesSeries';
 import Sports from './components/Sports';
+import Coverage from './components/Coverage';
 import Pricing from './components/Pricing';
+import SpeedTest from './components/SpeedTest';
 import FreeTrial from './components/FreeTrial';
 import FAQ from './components/FAQ';
 import Testimonials from './components/Testimonials';
@@ -30,7 +32,9 @@ function App() {
         <Platforms />
         <MoviesSeries />
         <Sports />
+        <Coverage />
         <Pricing />
+        <SpeedTest />
         <FreeTrial />
         <AdminMockup />
         <Testimonials />

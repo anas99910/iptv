@@ -184,7 +184,7 @@ const Platforms = () => {
                   {i18n.language === 'fr' ? 'Fermer' : i18n.language === 'ar' ? 'إغلاق' : 'Close'}
                 </button>
                 <a 
-                  href="https://wa.me/15551234567"
+                  href="https://wa.me/212766836615"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:flex-1 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-green-500/20 transition-all"
