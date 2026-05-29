@@ -24,7 +24,7 @@ function App() {
   }, [i18n.language]);
 
   return (
-    <div className="min-h-screen bg-background text-white font-sans selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white transition-colors duration-300">
       <Header />
       <main>
         <Hero />
