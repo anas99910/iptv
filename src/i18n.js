@@ -97,7 +97,24 @@ const resources = {
       "Free Trial Available (VIP only)": "🍇 Test gratuit disponible (uniquement VIP)",
       "1 Connection": "1 connexion simultanée",
       "12 Months": "12 mois",
-      "Pricing.Footnote": "Ibo Player offert pour les forfaits Premium et VIP. Test gratuit disponible uniquement pour le forfait VIP. Tous les forfaits incluent 1 connexion par appareil."
+      "Pricing.Footnote": "Ibo Player offert pour les forfaits Premium et VIP. Test gratuit disponible uniquement pour le forfait VIP. Tous les forfaits incluent 1 connexion par appareil.",
+      "Checkout.Title": "Finaliser votre commande",
+      "Checkout.OrderSummary": "Récapitulatif de la commande",
+      "Checkout.BillingCycle": "12 Mois",
+      "Checkout.PaymentMethod": "Choisissez un mode de paiement",
+      "Checkout.Instructions": "Instructions de paiement",
+      "Checkout.ConfirmWhatsApp": "Confirmer le paiement sur WhatsApp",
+      "Checkout.TapTapSendwave": "TapTap Send / Sendwave",
+      "Checkout.WesternUnion": "Western Union / MoneyGram",
+      "Checkout.BankTransfer": "Virement Bancaire (RIB)",
+      "Checkout.PayPalCard": "PayPal / Carte Bancaire",
+      "Checkout.Crypto": "Crypto-monnaie (USDT/BTC)",
+      "Checkout.TapTapInstructions": "1. Ouvrez l'application TapTap Send ou Sendwave sur votre téléphone.\n2. Sélectionnez le Maroc comme pays de destination.\n3. Choisissez le transfert vers un compte bancaire.\n4. Entrez les coordonnées bancaires ci-dessous :\n   - **Banque :** {bankName}\n   - **RIB :** {bankRib}\n5. Envoyez le montant exact et prenez une capture d'écran du reçu.",
+      "Checkout.WesternUnionInstructions": "1. Rendez-vous sur le site de Western Union/MoneyGram ou dans une agence physique.\n2. Envoyez le montant exact aux coordonnées suivantes :\n   - **Nom Complet :** {recipientName}\n   - **Ville :** {recipientCity}\n   - **Pays :** {recipientCountry}\n3. Notez le code de suivi de la transaction (MTCN).",
+      "Checkout.BankInstructions": "Effectuez un virement bancaire du montant exact vers notre compte bancaire marocain :\n- **Banque :** {bankName}\n- **RIB :** {bankRib}\nPrenez une capture d'écran de la confirmation de virement.",
+      "Checkout.PayPalInstructions": "Pour payer en toute sécurité par Carte Bancaire ou PayPal :\n1. Cliquez sur le bouton ci-dessous pour contacter notre équipe sur WhatsApp.\n2. Un agent vous enverra un lien de paiement sécurisé instantanément.",
+      "Checkout.CryptoInstructions": "Envoyez le montant exact en USDT (réseau TRC20) à l'adresse ci-dessous :\n- **Adresse USDT (TRC20) :** {usdtAddr}\nCopiez l'adresse et effectuez le transfert depuis votre portefeuille.",
+      "Checkout.NextStep": "Après avoir effectué le paiement, cliquez sur le bouton ci-dessous pour nous envoyer le reçu sur WhatsApp afin d'activer votre compte immédiatement."
     }
   },
   en: {
@@ -193,7 +210,24 @@ const resources = {
       "Free Trial Available (VIP only)": "🍇 Free Trial Available (VIP only)",
       "1 Connection": "1 Connection",
       "12 Months": "12 Months",
-      "Pricing.Footnote": "Ibo Player offered for Premium and VIP plans. Free trial available only for the VIP plan. All plans include 1 connection per device."
+      "Pricing.Footnote": "Ibo Player offered for Premium and VIP plans. Free trial available only for the VIP plan. All plans include 1 connection per device.",
+      "Checkout.Title": "Complete Your Order",
+      "Checkout.OrderSummary": "Order Summary",
+      "Checkout.BillingCycle": "12 Months",
+      "Checkout.PaymentMethod": "Choose a Payment Method",
+      "Checkout.Instructions": "Payment Instructions",
+      "Checkout.ConfirmWhatsApp": "Confirm Payment on WhatsApp",
+      "Checkout.TapTapSendwave": "TapTap Send / Sendwave",
+      "Checkout.WesternUnion": "Western Union / MoneyGram",
+      "Checkout.BankTransfer": "Bank Transfer (RIB)",
+      "Checkout.PayPalCard": "PayPal / Credit Card",
+      "Checkout.Crypto": "Cryptocurrency (USDT/BTC)",
+      "Checkout.TapTapInstructions": "1. Open the TapTap Send or Sendwave app on your phone.\n2. Select Morocco as the destination country.\n3. Choose transfer to a bank account.\n4. Enter the bank details below:\n   - **Bank:** {bankName}\n   - **RIB:** {bankRib}\n5. Send the exact amount and take a screenshot of the receipt.",
+      "Checkout.WesternUnionInstructions": "1. Go to the Western Union/MoneyGram website or a physical agency.\n2. Send the exact amount to the following recipient details:\n   - **Full Name:** {recipientName}\n   - **City:** {recipientCity}\n   - **Country:** {recipientCountry}\n3. Save the transaction tracking code (MTCN).",
+      "Checkout.BankInstructions": "Make a bank transfer of the exact amount to our Moroccan bank account:\n- **Bank:** {bankName}\n- **RIB:** {bankRib}\nTake a screenshot of the transfer confirmation.",
+      "Checkout.PayPalInstructions": "To pay securely via Credit Card or PayPal:\n1. Click the button below to contact our team on WhatsApp.\n2. An agent will send you a secure payment link instantly.",
+      "Checkout.CryptoInstructions": "Send the exact amount in USDT (TRC20 network) to the address below:\n- **USDT Address (TRC20):** {usdtAddr}\nCopy the address and make the transfer from your wallet.",
+      "Checkout.NextStep": "After making the payment, click the button below to send us the receipt on WhatsApp to activate your account immediately."
     }
   },
   ar: {
@@ -289,7 +323,24 @@ const resources = {
       "Free Trial Available (VIP only)": "🍇 تجربة مجانية متاحة (فقط لباقة VIP)",
       "1 Connection": "اتصال متزامن واحد",
       "12 Months": "12 شهراً",
-      "Pricing.Footnote": "تطبيق Ibo Player مجاني لباقات Premium و VIP. التجربة المجانية متاحة فقط لباقة VIP. تشمل جميع الباقات اتصالاً واحدًا لكل جهاز."
+      "Pricing.Footnote": "تطبيق Ibo Player مجاني لباقات Premium و VIP. التجربة المجانية متاحة فقط لباقة VIP. تشمل جميع الباقات اتصالاً واحدًا لكل جهاز.",
+      "Checkout.Title": "إتمام طلبك",
+      "Checkout.OrderSummary": "ملخص الطلب",
+      "Checkout.BillingCycle": "12 شهرًا",
+      "Checkout.PaymentMethod": "اختر طريقة الدفع",
+      "Checkout.Instructions": "تعليمات الدفع",
+      "Checkout.ConfirmWhatsApp": "تأكيد الدفع عبر الواتساب",
+      "Checkout.TapTapSendwave": "تاتاب سيند / سيند ويف",
+      "Checkout.WesternUnion": "ويسترن يونيون / موني جرام",
+      "Checkout.BankTransfer": "تحويل بنكي (RIB)",
+      "Checkout.PayPalCard": "بايبال / بطاقة بنكية",
+      "Checkout.Crypto": "العملات الرقمية (USDT/BTC)",
+      "Checkout.TapTapInstructions": "1. افتح تطبيق TapTap Send أو Sendwave على هاتفك.\n2. اختر المغرب كبلد الوجهة.\n3. اختر التحويل إلى حساب بنكي.\n4. أدخل الحساب البنكي التالي:\n   - **البنك:** {bankName}\n   - **الحساب (RIB):** {bankRib}\n5. أرسل المبلغ المحدد وخذ لقطة شاشة للوصل.",
+      "Checkout.WesternUnionInstructions": "1. اذهب إلى موقع ويسترن يونيون/موني جرام أو وكيل محلي.\n2. أرسل المبلغ المحدد إلى الاسم التالي:\n   - **الاسم الكامل:** {recipientName}\n   - **المدينة:** {recipientCity}\n   - **البلد:** {recipientCountry}\n3. احتفظ برقم تتبع المعاملة (MTCN).",
+      "Checkout.BankInstructions": "قم بإجراء تحويل بنكي للمبلغ المحدد إلى حسابنا البنكي في المغرب:\n- **البنك:** {bankName}\n- **الحساب (RIB):** {bankRib}\nخذ لقطة شاشة لتأكيد التحويل.",
+      "Checkout.PayPalInstructions": "للدفع الآمن عبر البطاقة البنكية أو بايبال:\n1. اضغط على الزر أدناه للتواصل معنا عبر الواتساب.\n2. سيرسل لك الوكيل رابط دفع آمن فوراً.",
+      "Checkout.CryptoInstructions": "أرسل المبلغ المحدد بعملة USDT (شبكة TRC20) إلى العنوان التالي:\n- **عنوان USDT (TRC20):** {usdtAddr}\nانسخ العنوان وأرسل من محفظتك.",
+      "Checkout.NextStep": "بعد إتمام الدفع، اضغط على الزر أدناه لإرسال الوصل أو لقطة الشاشة عبر الواتساب لتفعيل حسابك فوراً."
     }
   }
 };
