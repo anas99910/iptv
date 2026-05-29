@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+const BANNER_HEIGHT = 40; // px — single-row bar height
 const OFFER_ENDS_HOURS = 24;
+
+// Set CSS var immediately (before render) so Header offset is ready
+document.documentElement.style.setProperty('--banner-height', `${BANNER_HEIGHT}px`);
 
 const getEndTime = () => {
   const stored = localStorage.getItem('offerEndTime');
@@ -17,23 +21,6 @@ const CountdownBanner = () => {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(true);
   const [timeLeft, setTimeLeft] = useState({ h: 0, m: 0, s: 0 });
-  const bannerRef = useRef(null);
-
-  // Update CSS variable so Header shifts down exactly the banner height
-  useEffect(() => {
-    const updateVar = () => {
-      const h = visible && bannerRef.current
-        ? `${bannerRef.current.offsetHeight}px`
-        : '0px';
-      document.documentElement.style.setProperty('--banner-height', h);
-    };
-    updateVar();
-    window.addEventListener('resize', updateVar);
-    return () => {
-      window.removeEventListener('resize', updateVar);
-      document.documentElement.style.setProperty('--banner-height', '0px');
-    };
-  }, [visible]);
 
   useEffect(() => {
     const endTime = getEndTime();
@@ -62,23 +49,27 @@ const CountdownBanner = () => {
     <AnimatePresence>
       {visible && (
         <motion.div
-          ref={bannerRef}
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.35 }}
-          className="fixed top-0 left-0 right-0 z-[70] overflow-hidden"
+          initial={{ y: -BANNER_HEIGHT, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -BANNER_HEIGHT, opacity: 0 }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          className="fixed top-0 left-0 right-0 z-[70]"
+          style={{ height: BANNER_HEIGHT }}
         >
-          <div className="bg-gradient-to-r from-primary via-purple-600 to-secondary text-white text-sm py-2.5 px-4 flex items-center justify-center gap-3 relative">
+          <div className="h-full bg-gradient-to-r from-primary via-purple-600 to-secondary text-white text-sm flex items-center justify-center gap-3 px-4 relative overflow-hidden">
             <div className="absolute inset-0 bg-white/5 pointer-events-none" />
 
             <Zap className="w-4 h-4 text-yellow-300 flex-shrink-0 animate-bounce" />
 
-            <span className="font-semibold">
-              {t('Banner.Offer')} <span className="font-black underline underline-offset-2">{t('Banner.Discount')}</span> {t('Banner.EndsIn')}
+            <span className="font-semibold whitespace-nowrap">
+              {t('Banner.Offer')}{' '}
+              <span className="font-black underline underline-offset-2">
+                {t('Banner.Discount')}
+              </span>{' '}
+              {t('Banner.EndsIn')}
             </span>
 
-            <div className="flex items-center gap-1 bg-black/30 rounded-lg px-3 py-1 font-mono font-black text-base tracking-widest backdrop-blur-sm">
+            <div className="flex items-center gap-1 bg-black/30 rounded-lg px-3 py-0.5 font-mono font-black text-sm tracking-widest backdrop-blur-sm flex-shrink-0">
               <span>{pad(timeLeft.h)}</span>
               <span className="text-yellow-300 animate-pulse">:</span>
               <span>{pad(timeLeft.m)}</span>
@@ -108,4 +99,3 @@ const CountdownBanner = () => {
 };
 
 export default CountdownBanner;
-
