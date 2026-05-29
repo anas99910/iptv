@@ -295,7 +295,8 @@ const Pricing = () => {
                   
                   <div className="flex flex-col gap-2.5">
                     {[
-                      { id: 'taptap', name: t('Checkout.TapTapSendwave'), desc: 'TapTap Send, Sendwave, Remitly' },
+                      { id: 'taptap', name: t('Checkout.TapTapSendwave'), desc: 'TapTap Send, Sendwave transfer' },
+                      { id: 'remitly', name: t('Checkout.Remitly'), desc: 'Remitly international transfer' },
                       { id: 'wu', name: t('Checkout.WesternUnion'), desc: 'Western Union, MoneyGram, Ria' },
                       { id: 'bank', name: t('Checkout.BankTransfer'), desc: 'Moroccan Bank RIB (CIH Bank)' },
                       { id: 'paypal', name: t('Checkout.PayPalCard'), desc: 'PayPal, Credit Card securely' },
@@ -377,6 +378,50 @@ const Pricing = () => {
                           </li>
                           <li className="mt-2 text-xs text-yellow-400/80">
                             {t('Checkout.TapTapInstructions').split('\n')[5]}
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+
+                    {paymentMethod === 'remitly' && (
+                      <div className="space-y-4">
+                        <p className="font-semibold text-gray-400">
+                          {t('Checkout.RemitlyInstructions').split('\n')[0]}
+                        </p>
+                        <ul className="space-y-2 list-none pl-0">
+                          <li>{t('Checkout.RemitlyInstructions').split('\n')[1]}</li>
+                          <li>{t('Checkout.RemitlyInstructions').split('\n')[2]}</li>
+                          <li className="mt-4 p-3.5 bg-black/40 border border-white/5 rounded-xl flex flex-col gap-2 relative">
+                            <span className="text-xs uppercase font-bold text-gray-500 tracking-wider">
+                              Moroccan Bank Coordinates
+                            </span>
+                            <div className="flex justify-between items-center">
+                              <span className="font-semibold text-white">Bank Name:</span>
+                              <span className="text-gray-300 font-bold">{PAYMENT_CONFIG.BANK_NAME}</span>
+                            </div>
+                            <div className="flex flex-col gap-1 mt-1">
+                              <span className="font-semibold text-white">RIB (Account Details):</span>
+                              <div className="flex items-center justify-between gap-2 bg-slate-900 border border-white/10 p-2 rounded-lg mt-1">
+                                <span className="font-mono text-xs text-primary tracking-wider select-all break-all pr-2">
+                                  {PAYMENT_CONFIG.BANK_RIB}
+                                </span>
+                                <button
+                                  onClick={() => handleCopy(PAYMENT_CONFIG.BANK_RIB)}
+                                  className="text-gray-400 hover:text-white transition-colors"
+                                  title="Copy RIB"
+                                >
+                                  <Copy className="w-4 h-4" />
+                                </button>
+                              </div>
+                              {copiedText === PAYMENT_CONFIG.BANK_RIB && (
+                                <span className="text-xs text-green-400 self-end font-semibold">
+                                  Copied!
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                          <li className="mt-2 text-xs text-yellow-400/80">
+                            {t('Checkout.RemitlyInstructions').split('\n')[5]}
                           </li>
                         </ul>
                       </div>
@@ -504,6 +549,7 @@ const Pricing = () => {
                       const finalPrice = getPrice(selectedPlan);
                       const methodNames = {
                         taptap: 'TapTap Send / Sendwave',
+                        remitly: 'Remitly',
                         wu: 'Western Union / MoneyGram',
                         bank: 'Bank Transfer (RIB)',
                         paypal: 'PayPal / Credit Card',
