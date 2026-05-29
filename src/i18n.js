@@ -120,6 +120,7 @@ const resources = {
       "Banner.Offer": "🔥 Offre Limitée — Obtenez",
       "Banner.Discount": "30% DE RÉDUCTION",
       "Banner.EndsIn": "sur tous les forfaits ! Se termine dans :",
+      "Banner.EndsInShort": "Se termine dans :",
       "Banner.GrabDeal": "Profiter →"
     }
   },
@@ -239,6 +240,7 @@ const resources = {
       "Banner.Offer": "🔥 Limited Offer — Get",
       "Banner.Discount": "30% OFF",
       "Banner.EndsIn": "on all plans! Ends in:",
+      "Banner.EndsInShort": "Ends in:",
       "Banner.GrabDeal": "Grab Deal →"
     }
   },
@@ -358,6 +360,7 @@ const resources = {
       "Banner.Offer": "🔥 عرض محدود — احصل على",
       "Banner.Discount": "خصم 30%",
       "Banner.EndsIn": "على جميع الباقات! ينتهي خلال:",
+      "Banner.EndsInShort": "ينتهي في:",
       "Banner.GrabDeal": "اشترِ الآن ←"
     }
   }
