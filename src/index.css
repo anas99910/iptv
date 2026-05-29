@@ -4,31 +4,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ====================================
+   THEME VARIABLES
+==================================== */
 :root {
-  --background: #f8fafc;
+  --background: #f1f5f9;
+  --surface:    #ffffff;
   --text-color: #0f172a;
   --text-muted: #475569;
-  --card-bg: rgba(255, 255, 255, 0.7);
+  --text-faint: #94a3b8;
+  --border-color: rgba(15, 23, 42, 0.1);
+  --glow-color: rgba(59, 130, 246, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.75);
   --card-border: rgba(15, 23, 42, 0.08);
-  --glow-color: rgba(59, 130, 246, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(15, 23, 42, 0.06);
-  --dynamic-glow: radial-gradient(rgba(15, 23, 42, 0.02) 1.2px, transparent 1.2px);
+  --inset-bg: rgba(0, 0, 0, 0.04);
+  --dynamic-glow: radial-gradient(rgba(15, 23, 42, 0.03) 1.2px, transparent 1.2px);
+  --section-bg: #f1f5f9;
+  --modal-bg: #ffffff;
+  --input-bg: rgba(15, 23, 42, 0.04);
+  --input-border: rgba(15, 23, 42, 0.12);
 }
 
 .dark {
   --background: #050816;
-  --text-color: #ffffff;
+  --surface:    #0d1117;
+  --text-color: #f1f5f9;
   --text-muted: #94a3b8;
-  --card-bg: rgba(5, 8, 22, 0.6);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --glow-color: rgba(59, 130, 246, 0.4);
+  --text-faint: #64748b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glow-color: rgba(59, 130, 246, 0.45);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(5, 8, 22, 0.6);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --inset-bg: rgba(255, 255, 255, 0.03);
   --dynamic-glow: radial-gradient(rgba(255, 255, 255, 0.035) 1.2px, transparent 1.2px);
+  --section-bg: #050816;
+  --modal-bg: #0d1117;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
 }
 
+/* ====================================
+   BASE RESET
+==================================== */
 @layer base {
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
   body {
     background-color: var(--background);
     color: var(--text-color);
@@ -36,19 +62,164 @@
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
-  /* Make standard text fallbacks color adapt */
-  p, span, li, label {
-    transition: color 0.3s ease;
-  }
 
-  /* Force headers to inherit custom theme color */
   h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
     transition: color 0.3s ease;
   }
 }
 
+/* ====================================
+   COMPONENT OVERRIDES — LIGHT MODE
+==================================== */
+
+/* All sections */
+section {
+  background-color: var(--section-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Override text-white to follow theme */
+:root .text-white {
+  color: var(--text-color) !important;
+}
+
+/* Override text-gray-* shades to adapt */
+:root .text-gray-100,
+:root .text-gray-200,
+:root .text-gray-300 {
+  color: var(--text-muted) !important;
+}
+:root .text-gray-400,
+:root .text-gray-500 {
+  color: var(--text-faint) !important;
+}
+
+/* bg-background override */
+:root .bg-background {
+  background-color: var(--background) !important;
+}
+
+/* bg-white/X — make surfaces light in light mode */
+:root .bg-white\/5,
+:root .bg-white\/\[0\.02\] {
+  background-color: var(--inset-bg) !important;
+}
+
+/* bg-black/X override */
+:root .bg-black\/40,
+:root .bg-black\/80,
+:root .bg-black\/60 {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* bg-slate-900 */
+:root .bg-slate-900 {
+  background-color: var(--surface) !important;
+}
+:root .bg-slate-900\/50 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* border-white/X */
+:root .border-white\/10,
+:root .border-white\/5,
+:root .border-white\/20 {
+  border-color: var(--border-color) !important;
+}
+
+/* backdrop backgrounds */
+:root .bg-background\/60,
+:root .bg-background\/95 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+/* Modal overlay backdrop */
+:root .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+}
+
+/* Inputs in light mode */
+:root input,
+:root select,
+:root textarea {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+:root input::placeholder,
+:root textarea::placeholder {
+  color: var(--text-faint);
+}
+
+/* ====================================
+   DARK MODE — RESTORE ORIGINALS
+==================================== */
+
+/* In dark mode, restore text-white */
+.dark .text-white {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-100,
+.dark .text-gray-200,
+.dark .text-gray-300 {
+  color: #d1d5db !important;
+}
+.dark .text-gray-400,
+.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .bg-background {
+  background-color: #050816 !important;
+}
+
+.dark .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .bg-white\/\[0\.02\] {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.dark .bg-black\/40 {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.dark .bg-black\/80 {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+.dark .bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark .bg-slate-900 {
+  background-color: #0f172a !important;
+}
+.dark .bg-slate-900\/50 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+}
+
+.dark .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.dark .border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+.dark .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .bg-background\/60 {
+  background-color: rgba(5, 8, 22, 0.6) !important;
+}
+.dark .bg-background\/95 {
+  background-color: rgba(5, 8, 22, 0.95) !important;
+}
+
+/* ====================================
+   GLASSMORPHISM COMPONENTS
+==================================== */
 .glass {
   background-color: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -63,7 +234,7 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--card-border);
   border-radius: 1rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease;
 }
 
@@ -72,6 +243,9 @@
   border-color: rgba(59, 130, 246, 0.4);
 }
 
+/* ====================================
+   MISC UTILITIES
+==================================== */
 .glow-text {
   text-shadow: 0 0 20px var(--glow-color);
 }
