@@ -14,6 +14,8 @@ import FAQ from './components/FAQ';
 import Testimonials from './components/Testimonials';
 import AdminMockup from './components/AdminMockup';
 import Footer from './components/Footer';
+import CountdownBanner from './components/CountdownBanner';
+import BackToTop from './components/BackToTop';
 
 function App() {
   const { i18n } = useTranslation();
@@ -25,7 +27,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white transition-colors duration-300">
-      <Header />
+      {/* Countdown Banner — fixed at top, pushes everything down */}
+      <CountdownBanner />
+
+      {/* Header needs top offset to not be hidden behind banner */}
+      <div className="pt-10">
+        <Header />
+      </div>
+
       <main>
         <Hero />
         <Features />
@@ -41,8 +50,12 @@ function App() {
         <FAQ />
       </main>
       <Footer />
+
+      {/* Floating utilities */}
+      <BackToTop />
     </div>
   );
 }
 
 export default App;
+

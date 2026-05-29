@@ -111,6 +111,21 @@ const Pricing = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">
             Choose the perfect plan for you and start enjoying unlimited entertainment.
           </p>
+          {/* Money-Back Guarantee Badge */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2 text-sm text-green-400 font-semibold">
+              <span className="text-lg">✅</span>
+              <span>30-Day Money-Back Guarantee</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 text-sm text-primary font-semibold">
+              <span className="text-lg">🔒</span>
+              <span>Secure Payment</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full px-4 py-2 text-sm text-yellow-400 font-semibold">
+              <span className="text-lg">⚡</span>
+              <span>Instant Activation</span>
+            </div>
+          </div>
         </div>
 
         {/* Dynamic Dual Switcher Container (Responsive Flex Grid) */}
