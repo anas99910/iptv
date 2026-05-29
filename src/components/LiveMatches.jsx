@@ -12,6 +12,29 @@ const CORS_PROXIES = [
   (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`
 ];
 
+// Robust, self-healing team flag component that falls back to a clean TV icon on hotlink or network failures
+const TeamLogo = ({ src, alt, iconSizeClass = "w-6 h-6" }) => {
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    // Reset error state if the src changes
+    setError(false);
+  }, [src]);
+
+  if (error || !src) {
+    return <Tv className={`${iconSizeClass} text-gray-500`} />;
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-contain"
+      onError={() => setError(true)}
+    />
+  );
+};
+
 const LiveMatches = () => {
   const { t, i18n } = useTranslation();
   const [matches, setMatches] = useState([]);
@@ -86,7 +109,7 @@ const LiveMatches = () => {
             const time = timeElement ? timeElement.textContent.trim() : '';
             
             const onclick = child.getAttribute('onclick') || '';
-            const onclickMatch = /goToMatch\((\d+)\s*,\s*'([^']+)'\);?/.exec(onclick);
+            const onclickMatch = /goToMatch\(\s*(\d+)\s*,\s*['"]([^'"]+)['"]\s*\)/.exec(onclick);
             const matchId = onclickMatch ? onclickMatch[1] : '';
             const matchSlug = onclickMatch ? onclickMatch[2] : '';
             
@@ -295,11 +318,7 @@ const LiveMatches = () => {
                     {/* Team 1 */}
                     <div className="flex flex-col items-center gap-2 w-[42%] text-center">
                       <div className="w-14 h-14 rounded-full bg-black/40 border border-white/10 flex items-center justify-center overflow-hidden p-1 shadow-inner group-hover:border-primary/50 transition-colors">
-                        {match.logo1 ? (
-                          <img src={match.logo1} alt={match.team1} className="w-full h-full object-contain" />
-                        ) : (
-                          <Tv className="w-6 h-6 text-gray-500" />
-                        )}
+                        <TeamLogo src={match.logo1} alt={match.team1} iconSizeClass="w-6 h-6" />
                       </div>
                       <span className="text-sm font-bold text-white tracking-tight line-clamp-1">
                         {match.team1}
@@ -320,11 +339,7 @@ const LiveMatches = () => {
                     {/* Team 2 */}
                     <div className="flex flex-col items-center gap-2 w-[42%] text-center">
                       <div className="w-14 h-14 rounded-full bg-black/40 border border-white/10 flex items-center justify-center overflow-hidden p-1 shadow-inner group-hover:border-primary/50 transition-colors">
-                        {match.logo2 ? (
-                          <img src={match.logo2} alt={match.team2} className="w-full h-full object-contain" />
-                        ) : (
-                          <Tv className="w-6 h-6 text-gray-500" />
-                        )}
+                        <TeamLogo src={match.logo2} alt={match.team2} iconSizeClass="w-6 h-6" />
                       </div>
                       <span className="text-sm font-bold text-white tracking-tight line-clamp-1">
                         {match.team2}
@@ -390,11 +405,7 @@ const LiveMatches = () => {
                 {/* Team 1 */}
                 <div className="flex flex-col items-center gap-2 w-[42%]">
                   <div className="w-16 h-16 rounded-full bg-black/30 border border-white/10 flex items-center justify-center p-1.5 shadow-inner">
-                    {selectedMatch.logo1 ? (
-                      <img src={selectedMatch.logo1} alt={selectedMatch.team1} className="w-full h-full object-contain" />
-                    ) : (
-                      <Tv className="w-8 h-8 text-gray-500" />
-                    )}
+                    <TeamLogo src={selectedMatch.logo1} alt={selectedMatch.team1} iconSizeClass="w-8 h-8" />
                   </div>
                   <span className="text-sm font-extrabold text-white leading-tight">
                     {selectedMatch.team1}
@@ -417,11 +428,7 @@ const LiveMatches = () => {
                 {/* Team 2 */}
                 <div className="flex flex-col items-center gap-2 w-[42%]">
                   <div className="w-16 h-16 rounded-full bg-black/30 border border-white/10 flex items-center justify-center p-1.5 shadow-inner">
-                    {selectedMatch.logo2 ? (
-                      <img src={selectedMatch.logo2} alt={selectedMatch.team2} className="w-full h-full object-contain" />
-                    ) : (
-                      <Tv className="w-8 h-8 text-gray-500" />
-                    )}
+                    <TeamLogo src={selectedMatch.logo2} alt={selectedMatch.team2} iconSizeClass="w-8 h-8" />
                   </div>
                   <span className="text-sm font-extrabold text-white leading-tight">
                     {selectedMatch.team2}
