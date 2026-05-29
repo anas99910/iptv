@@ -40,6 +40,7 @@ const Header = () => {
 
   const navLinks = [
     { name: t('Home'), href: '#' },
+    { name: t('LiveMatches.NavName'), href: '#live-matches' },
     { name: t('Pricing'), href: '#pricing' },
     { name: t('Channels'), href: '#features' },
     { name: t('FAQ'), href: '#faq' },

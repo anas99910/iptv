@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import LiveMatches from './components/LiveMatches';
 import Features from './components/Features';
 import Platforms from './components/Platforms';
 import MoviesSeries from './components/MoviesSeries';
@@ -35,6 +36,7 @@ function App() {
 
       <main>
         <Hero />
+        <LiveMatches />
         <Features />
         <Platforms />
         <MoviesSeries />

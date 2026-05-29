@@ -121,7 +121,19 @@ const resources = {
       "Banner.Discount": "30% DE RÉDUCTION",
       "Banner.EndsIn": "sur tous les forfaits ! Se termine dans :",
       "Banner.EndsInShort": "Se termine dans :",
-      "Banner.GrabDeal": "Profiter →"
+      "Banner.GrabDeal": "Profiter →",
+      "LiveMatches.NavName": "Matchs en Direct",
+      "LiveMatches.Title": "Matchs en Direct d'Aujourd'hui",
+      "LiveMatches.Subtext": "Regardez vos matchs préférés en Ultra HD 4K sans coupure. Découvrez les affiches du jour !",
+      "LiveMatches.Loading": "Mise à jour des scores en cours...",
+      "LiveMatches.Error": "Impossible de charger le calendrier des matchs. Veuillez rafraîchir la page.",
+      "LiveMatches.NoMatches": "Aucun match programmé pour aujourd'hui.",
+      "LiveMatches.Live": "EN DIRECT",
+      "LiveMatches.Watch4K": "Regarder en Ultra HD 4K ⚡",
+      "LiveMatches.FreeStream": "Stream Gratuit (SD/HD) 📺",
+      "LiveMatches.ChooseWatch": "Comment souhaitez-vous regarder ce match ?",
+      "LiveMatches.Close": "Fermer",
+      "LiveMatches.PremiumOffer": "Profitez d'une diffusion Ultra HD fluide et stable de tous les matchs avec notre abonnement Premium."
     }
   },
   en: {
@@ -241,7 +253,19 @@ const resources = {
       "Banner.Discount": "30% OFF",
       "Banner.EndsIn": "on all plans! Ends in:",
       "Banner.EndsInShort": "Ends in:",
-      "Banner.GrabDeal": "Grab Deal →"
+      "Banner.GrabDeal": "Grab Deal →",
+      "LiveMatches.NavName": "Live Matches",
+      "LiveMatches.Title": "Today's Live Matches",
+      "LiveMatches.Subtext": "Watch your favorite matches in Ultra HD 4K without interruptions. Check out today's fixtures!",
+      "LiveMatches.Loading": "Updating live match fixtures...",
+      "LiveMatches.Error": "Unable to load match schedule. Please refresh the page.",
+      "LiveMatches.NoMatches": "No matches scheduled for today.",
+      "LiveMatches.Live": "LIVE",
+      "LiveMatches.Watch4K": "Watch in Ultra HD 4K ⚡",
+      "LiveMatches.FreeStream": "Free Stream (SD/HD) 📺",
+      "LiveMatches.ChooseWatch": "How would you like to watch this match?",
+      "LiveMatches.Close": "Close",
+      "LiveMatches.PremiumOffer": "Enjoy smooth, stable, Ultra HD broadcasts of all matches with our Premium subscription."
     }
   },
   ar: {
@@ -361,7 +385,19 @@ const resources = {
       "Banner.Discount": "خصم 30%",
       "Banner.EndsIn": "على جميع الباقات! ينتهي خلال:",
       "Banner.EndsInShort": "ينتهي في:",
-      "Banner.GrabDeal": "اشترِ الآن ←"
+      "Banner.GrabDeal": "اشترِ الآن ←",
+      "LiveMatches.NavName": "مباريات اليوم",
+      "LiveMatches.Title": "مباريات اليوم مباشرة",
+      "LiveMatches.Subtext": "شاهد مبارياتك المفضلة بدقة Ultra HD 4K ودون انقطاع. تعرف على جدول مباريات اليوم !",
+      "LiveMatches.Loading": "جاري تحديث جدول المباريات...",
+      "LiveMatches.Error": "تعذر تحميل جدول المباريات. يرجى إعادة محاولة تحديث الصفحة.",
+      "LiveMatches.NoMatches": "لا توجد مباريات مجدولة اليوم.",
+      "LiveMatches.Live": "مباشر",
+      "LiveMatches.Watch4K": "شاهد بدقة Ultra HD 4K ⚡",
+      "LiveMatches.FreeStream": "بث مجاني (SD/HD) 📺",
+      "LiveMatches.ChooseWatch": "كيف ترغب في مشاهدة هذه المباراة؟",
+      "LiveMatches.Close": "إغلاق",
+      "LiveMatches.PremiumOffer": "استمتع ببث Ultra HD سلس ومستقر لجميع المباريات مع اشتراكنا المميز."
     }
   }
 };
