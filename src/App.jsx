@@ -27,13 +27,11 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary selection:text-white transition-colors duration-300">
-      {/* Countdown Banner — fixed at top, pushes everything down */}
+      {/* Countdown Banner — fixed at top */}
       <CountdownBanner />
 
-      {/* Header needs top offset to not be hidden behind banner */}
-      <div className="pt-10">
-        <Header />
-      </div>
+      {/* Header — positions itself below the banner via --banner-height CSS var */}
+      <Header />
 
       <main>
         <Hero />

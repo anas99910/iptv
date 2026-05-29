@@ -116,7 +116,11 @@ const resources = {
       "Checkout.BankInstructions": "Effectuez un virement bancaire du montant exact vers notre compte bancaire marocain :\n- **Banque :** {bankName}\n- **RIB :** {bankRib}\nPrenez une capture d'écran de la confirmation de virement.",
       "Checkout.PayPalInstructions": "Pour payer en toute sécurité par Carte Bancaire ou PayPal :\n1. Cliquez sur le bouton ci-dessous pour contacter notre équipe sur WhatsApp.\n2. Un agent vous enverra un lien de paiement sécurisé instantanément.",
       "Checkout.CryptoInstructions": "Envoyez le montant exact en USDT (réseau TRC20) à l'adresse ci-dessous :\n- **Adresse USDT (TRC20) :** {usdtAddr}\nCopiez l'adresse et effectuez le transfert depuis votre portefeuille.",
-      "Checkout.NextStep": "Après avoir effectué le paiement, cliquez sur le bouton ci-dessous pour nous envoyer le reçu sur WhatsApp afin d'activer votre compte immédiatement."
+      "Checkout.NextStep": "Après avoir effectué le paiement, cliquez sur le bouton ci-dessous pour nous envoyer le reçu sur WhatsApp afin d'activer votre compte immédiatement.",
+      "Banner.Offer": "🔥 Offre Limitée — Obtenez",
+      "Banner.Discount": "30% DE RÉDUCTION",
+      "Banner.EndsIn": "sur tous les forfaits ! Se termine dans :",
+      "Banner.GrabDeal": "Profiter →"
     }
   },
   en: {
@@ -231,7 +235,11 @@ const resources = {
       "Checkout.BankInstructions": "Make a bank transfer of the exact amount to our Moroccan bank account:\n- **Bank:** {bankName}\n- **RIB:** {bankRib}\nTake a screenshot of the transfer confirmation.",
       "Checkout.PayPalInstructions": "To pay securely via Credit Card or PayPal:\n1. Click the button below to contact our team on WhatsApp.\n2. An agent will send you a secure payment link instantly.",
       "Checkout.CryptoInstructions": "Send the exact amount in USDT (TRC20 network) to the address below:\n- **USDT Address (TRC20):** {usdtAddr}\nCopy the address and make the transfer from your wallet.",
-      "Checkout.NextStep": "After making the payment, click the button below to send us the receipt on WhatsApp to activate your account immediately."
+      "Checkout.NextStep": "After making the payment, click the button below to send us the receipt on WhatsApp to activate your account immediately.",
+      "Banner.Offer": "🔥 Limited Offer — Get",
+      "Banner.Discount": "30% OFF",
+      "Banner.EndsIn": "on all plans! Ends in:",
+      "Banner.GrabDeal": "Grab Deal →"
     }
   },
   ar: {
@@ -346,7 +354,11 @@ const resources = {
       "Checkout.BankInstructions": "قم بإجراء تحويل بنكي للمبلغ المحدد إلى حسابنا البنكي في المغرب:\n- **البنك:** {bankName}\n- **الحساب (RIB):** {bankRib}\nخذ لقطة شاشة لتأكيد التحويل.",
       "Checkout.PayPalInstructions": "للدفع الآمن عبر البطاقة البنكية أو بايبال:\n1. اضغط على الزر أدناه للتواصل معنا عبر الواتساب.\n2. سيرسل لك الوكيل رابط دفع آمن فوراً.",
       "Checkout.CryptoInstructions": "أرسل المبلغ المحدد بعملة USDT (شبكة TRC20) إلى العنوان التالي:\n- **عنوان USDT (TRC20):** {usdtAddr}\nانسخ العنوان وأرسل من محفظتك.",
-      "Checkout.NextStep": "بعد إتمام الدفع، اضغط على الزر أدناه لإرسال الوصل أو لقطة الشاشة عبر الواتساب لتفعيل حسابك فوراً."
+      "Checkout.NextStep": "بعد إتمام الدفع، اضغط على الزر أدناه لإرسال الوصل أو لقطة الشاشة عبر الواتساب لتفعيل حسابك فوراً.",
+      "Banner.Offer": "🔥 عرض محدود — احصل على",
+      "Banner.Discount": "خصم 30%",
+      "Banner.EndsIn": "على جميع الباقات! ينتهي خلال:",
+      "Banner.GrabDeal": "اشترِ الآن ←"
     }
   }
 };
